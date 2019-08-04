@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from .forms import  ArticlePostForm
 from .models import ArticlePost
 import markdown
+from django.contrib.auth.models import User
 # Create your views here.
 
 def article_list(request):
     articles = ArticlePost.objects.all()
     context = {'articles':articles}
+    A
     return render(request, 'article/list.html', context)
 
 
